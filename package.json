@@ -1,6 +1,7 @@
 {
   "name": "rick-and-morty",
   "version": "0.1.0",
+  "author": "Cleiton Alves <dev.cleitonalves@gmail.com>",
   "private": true,
   "scripts": {
     "dev": "next dev",
