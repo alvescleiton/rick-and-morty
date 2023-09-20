@@ -1,8 +1,23 @@
 import type { NextPage } from 'next'
+import Image from 'next/image'
 
 const Home: NextPage = () => {
   return (
-    <h1 className="font-bold text-blue-600 text-center">Home</h1>
+    <div className="flex justify-center min-h-screen">
+      <Image 
+        className="
+          object-cover 
+          opacity-70 
+          blur-sm 
+          brightness-150 
+          -z-10
+          animate-mypulse
+        " 
+        src="/assets/main.png" 
+        alt="Rick and Morty" 
+        layout="fill"
+      />
+    </div>
   )
 }
 
