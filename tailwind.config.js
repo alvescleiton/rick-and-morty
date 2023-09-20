@@ -6,14 +6,14 @@ module.exports = {
   theme: {
     extend: {
       keyframes: {
-        mypulse: {
-          '0%, 100%': { opacity: '60%' },
-          '50%': { opacity: '40%' },
+        myhue: {
+          '0%, 100%': { filter: 'hue-rotate(0deg)' },
+          '50%': { filter: 'hue-rotate(180deg)' },
         }
       },
       animation: {
-        mypulse: 'mypulse 2.5s ease-in-out infinite'
-      }
+        myhue: 'myhue 5s ease-in-out infinite'
+      },
     },
   },
   plugins: [],
