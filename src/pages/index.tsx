@@ -126,9 +126,9 @@ const Home = () => {
 
   if (!intro) {
     return (
-      <div className="flex flex-wrap justify-between w-[320px] sm:w-[640px] lg:w-[1024px] px-3 m-auto gap-2">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 min-w-[320px] max-w-5xl m-auto p-3 sm:p-5 gap-3 sm:gap-5">
         {list.map((item, i) => (
-            <div key={i} className="w-[48%] sm:w-[32%] lg:w-[24%] aspect-square mb-3 bg-slate-100 rounded-md">
+            <div key={i} className="aspect-square bg-slate-100 rounded-md">
               <div className="relative w-full aspect-square">
                 <Image 
                   src={item.image}
@@ -145,11 +145,6 @@ const Home = () => {
               </div>
             </div>
         ))}
-
-        <div className="w-[48%] h-0 sm:w-[32%] lg:w-[24%] aspect-square mb-1"></div>
-        <div className="w-[48%] h-0 sm:w-[32%] lg:w-[24%] aspect-square mb-1"></div>
-        <div className="w-[48%] h-0 sm:w-[32%] lg:w-[24%] aspect-square mb-1"></div>
-        <div className="w-[48%] h-0 sm:w-[32%] lg:w-[24%] aspect-square mb-1"></div>
       </div>
     )
   }
