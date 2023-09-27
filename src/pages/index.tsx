@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
+import characters from '../service/characters.json'
 
 const Home = () => {
   const [intro, setIntro] = useState(true)
@@ -11,79 +12,6 @@ const Home = () => {
       }, 500)
     })()
   }, [intro])
-
-  const list = [
-    {
-      "id": "1",
-      "name": "Rick Sanchez",
-      "gender": "Male",
-      "status": "Alive",
-      "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg"
-    },
-    {
-      "id": "8",
-      "name": "Adjudicator Rick",
-      "gender": "Male",
-      "status": "Dead",
-      "image": "https://rickandmortyapi.com/api/character/avatar/8.jpeg"
-    },
-    {
-      "id": "15",
-      "name": "Alien Rick",
-      "gender": "Male",
-      "status": "unknown",
-      "image": "https://rickandmortyapi.com/api/character/avatar/15.jpeg"
-    },
-    {
-      "id": "19",
-      "name": "Antenna Rick",
-      "gender": "Male",
-      "status": "unknown",
-      "image": "https://rickandmortyapi.com/api/character/avatar/19.jpeg"
-    },
-    {
-      "id": "22",
-      "name": "Aqua Rick",
-      "gender": "Male",
-      "status": "unknown",
-      "image": "https://rickandmortyapi.com/api/character/avatar/22.jpeg"
-    },
-    {
-      "id": "48",
-      "name": "Black Rick",
-      "gender": "Male",
-      "status": "Alive",
-      "image": "https://rickandmortyapi.com/api/character/avatar/48.jpeg"
-    },
-    {
-      "id": "56",
-      "name": "Bootleg Portal Chemist Rick",
-      "gender": "Male",
-      "status": "Dead",
-      "image": "https://rickandmortyapi.com/api/character/avatar/56.jpeg"
-    },
-    {
-      "id": "69",
-      "name": "Commander Rick",
-      "gender": "Male",
-      "status": "Dead",
-      "image": "https://rickandmortyapi.com/api/character/avatar/69.jpeg"
-    },
-    {
-      "id": "72",
-      "name": "Cool Rick",
-      "gender": "Male",
-      "status": "Alive",
-      "image": "https://rickandmortyapi.com/api/character/avatar/72.jpeg"
-    },
-    {
-      "id": "74",
-      "name": "Cop Rick",
-      "gender": "Male",
-      "status": "Alive",
-      "image": "https://rickandmortyapi.com/api/character/avatar/74.jpeg"
-    }
-  ]
 
   if (intro) {
     return (
@@ -127,21 +55,21 @@ const Home = () => {
   if (!intro) {
     return (
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 min-w-[320px] max-w-5xl m-auto p-3 sm:p-5 gap-3 sm:gap-5">
-        {list.map((item, i) => (
+        {characters.map((character, i) => (
             <div key={i} className="aspect-square bg-slate-100 rounded-md">
               <div className="relative w-full aspect-square">
                 <Image 
-                  src={item.image}
-                  alt={item.name}
+                  src={character.image}
+                  alt={character.name}
                   layout="fill"
                   className="rounded-t-md"
                   priority
                 />
               </div>
               <div className="text-xs sm:text-sm text-slate-500 p-2">
-                <h3 className="text-slate-800">Name: {item.name}</h3>
-                <span className="block">Gender: {item.gender}</span>
-                <span className="block">Status: {item.status !== "unknown" ? item.status : "?"}</span>
+                <h3 className="text-slate-800">Name: {character.name}</h3>
+                <span className="block">Gender: {character.gender}</span>
+                <span className="block">Status: {character.status !== "unknown" ? character.status : "?"}</span>
               </div>
             </div>
         ))}
