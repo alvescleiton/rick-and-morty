@@ -6,13 +6,16 @@ module.exports = {
   theme: {
     extend: {
       keyframes: {
-        myhue: {
-          '0%, 100%': { filter: 'hue-rotate(0deg)' },
-          '50%': { filter: 'hue-rotate(180deg)' },
+        introAnimation: {
+          '0%': { filter: 'hue-rotate(0deg)', opacity: 1 },
+          '50%': { filter: 'hue-rotate(180deg)', opacity: 1 },
+          '75%': { filter: 'hue-rotate(90deg)', opacity: 1 },
+          '90%': { filter: 'hue-rotate(45deg)', opacity: 0 },
+          '100%': { filter: 'hue-rotate(0deg)', opacity: 0 },
         }
       },
       animation: {
-        myhue: 'myhue 5s ease-in-out infinite'
+        introAnimation: 'introAnimation 5s ease-in-out infinite'
       },
     },
   },
