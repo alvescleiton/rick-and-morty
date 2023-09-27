@@ -1,0 +1,72 @@
+[
+  {
+    "id": "1",
+    "name": "Rick Sanchez",
+    "gender": "Male",
+    "status": "Alive",
+    "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg"
+  },
+  {
+    "id": "8",
+    "name": "Adjudicator Rick",
+    "gender": "Male",
+    "status": "Dead",
+    "image": "https://rickandmortyapi.com/api/character/avatar/8.jpeg"
+  },
+  {
+    "id": "15",
+    "name": "Alien Rick",
+    "gender": "Male",
+    "status": "unknown",
+    "image": "https://rickandmortyapi.com/api/character/avatar/15.jpeg"
+  },
+  {
+    "id": "19",
+    "name": "Antenna Rick",
+    "gender": "Male",
+    "status": "unknown",
+    "image": "https://rickandmortyapi.com/api/character/avatar/19.jpeg"
+  },
+  {
+    "id": "22",
+    "name": "Aqua Rick",
+    "gender": "Male",
+    "status": "unknown",
+    "image": "https://rickandmortyapi.com/api/character/avatar/22.jpeg"
+  },
+  {
+    "id": "48",
+    "name": "Black Rick",
+    "gender": "Male",
+    "status": "Alive",
+    "image": "https://rickandmortyapi.com/api/character/avatar/48.jpeg"
+  },
+  {
+    "id": "56",
+    "name": "Bootleg Portal Chemist Rick",
+    "gender": "Male",
+    "status": "Dead",
+    "image": "https://rickandmortyapi.com/api/character/avatar/56.jpeg"
+  },
+  {
+    "id": "69",
+    "name": "Commander Rick",
+    "gender": "Male",
+    "status": "Dead",
+    "image": "https://rickandmortyapi.com/api/character/avatar/69.jpeg"
+  },
+  {
+    "id": "72",
+    "name": "Cool Rick",
+    "gender": "Male",
+    "status": "Alive",
+    "image": "https://rickandmortyapi.com/api/character/avatar/72.jpeg"
+  },
+  {
+    "id": "74",
+    "name": "Cop Rick",
+    "gender": "Male",
+    "status": "Alive",
+    "image": "https://rickandmortyapi.com/api/character/avatar/74.jpeg"
+  }
+]
