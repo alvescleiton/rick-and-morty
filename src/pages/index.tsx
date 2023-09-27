@@ -54,25 +54,29 @@ const Home = () => {
 
   if (!intro) {
     return (
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 min-w-[320px] max-w-5xl m-auto p-3 sm:p-5 gap-3 sm:gap-5">
-        {characters.map((character, i) => (
-            <div key={i} className="aspect-square bg-slate-100 rounded-md">
-              <div className="relative w-full aspect-square">
-                <Image 
-                  src={character.image}
-                  alt={character.name}
-                  layout="fill"
-                  className="rounded-t-md"
-                  priority
-                />
+      <div className="container min-w-[320px] max-w-5xl m-auto">
+        <h1 className="p-5 pb-2 text-3xl text-orange-600">List of Characters</h1>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 m-auto p-5 gap-3 sm:gap-5">
+          {characters.map((character, i) => (
+              <div key={i} className="aspect-square bg-slate-100 rounded-md">
+                <div className="relative w-full aspect-square">
+                  <Image 
+                    src={character.image}
+                    alt={character.name}
+                    layout="fill"
+                    className="rounded-t-md"
+                    priority
+                  />
+                </div>
+                <div className="text-xs sm:text-sm text-slate-500 p-2">
+                  <h3 className="text-slate-800">{character.name}</h3>
+                  <span className="block">Gender: {character.gender}</span>
+                  <span className="block">Status: {character.status !== "unknown" ? character.status : "?"}</span>
+                </div>
               </div>
-              <div className="text-xs sm:text-sm text-slate-500 p-2">
-                <h3 className="text-slate-800">Name: {character.name}</h3>
-                <span className="block">Gender: {character.gender}</span>
-                <span className="block">Status: {character.status !== "unknown" ? character.status : "?"}</span>
-              </div>
-            </div>
-        ))}
+          ))}
+        </div>
       </div>
     )
   }
