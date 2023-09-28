@@ -1,6 +1,6 @@
-import Image from 'next/image'
 import { useEffect, useState } from 'react'
-import characters from '../service/characters.json'
+import { Intro } from '../components/Intro'
+import { CharacterList } from '../components/Character/characterList'
 
 const Home = () => {
   const [intro, setIntro] = useState(true)
@@ -9,77 +9,11 @@ const Home = () => {
     (() => {
       setTimeout(() => {
         setIntro(false)
-      }, 500)
+      }, 4500)
     })()
   }, [intro])
 
-  if (intro) {
-    return (
-      <div className="flex justify-center min-h-screen">
-        <Image 
-          className="
-            object-cover 
-            opacity-70 
-            blur-sm 
-            brightness-150 
-            -z-10
-            animate-myhue
-          " 
-          src="/assets/main.png" 
-          alt="Rick and Morty" 
-          layout="fill"
-        />
-
-        <p className="
-          self-center 
-          text-purple-800 
-          text-4xl/[40px] 
-          lg:text-5xl/[50px] 
-          text-center
-          bg-white
-          bg-opacity-50
-          w-full
-          py-10
-          shadow-xl
-          backdrop-blur-[2px]
-          -skew-y-3
-        ">
-          Rick
-          <small className="block py-2 text-xl lg:text-3xl">and</small>
-          Morty
-        </p>
-      </div>
-    )
-  }
-
-  if (!intro) {
-    return (
-      <div className="container min-w-[320px] max-w-5xl m-auto">
-        <h1 className="p-5 pb-2 text-3xl text-orange-600">List of Characters</h1>
-
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 m-auto p-5 gap-3 sm:gap-5">
-          {characters.map((character, i) => (
-              <div key={i} className="aspect-square bg-slate-100 rounded-md">
-                <div className="relative w-full aspect-square">
-                  <Image 
-                    src={character.image}
-                    alt={character.name}
-                    layout="fill"
-                    className="rounded-t-md"
-                    priority
-                  />
-                </div>
-                <div className="text-xs sm:text-sm text-slate-500 p-2">
-                  <h3 className="text-slate-800">{character.name}</h3>
-                  <span className="block">Gender: {character.gender}</span>
-                  <span className="block">Status: {character.status !== "unknown" ? character.status : "?"}</span>
-                </div>
-              </div>
-          ))}
-        </div>
-      </div>
-    )
-  }
+  return intro ? <Intro /> : <CharacterList />
 }
 
 export default Home
