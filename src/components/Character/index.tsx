@@ -8,13 +8,12 @@ interface Character {
 }
 
 interface Props {
-  key: string | number
   character: Character
 }
 
-export function Character({ key, character }: Props) {
+export function Character({ character }: Props) {
   return (
-    <div key={key} className="aspect-square bg-slate-100 rounded-md">
+    <div className="aspect-square bg-slate-100 rounded-md">
       <div className="relative w-full aspect-square">
         <Image 
           src={character?.image}
