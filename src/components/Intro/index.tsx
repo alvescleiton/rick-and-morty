@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export function Intro() {
   return (
-    <div className="flex justify-center min-h-screen animate-introAnimation">
+    <div className="flex justify-center min-h-screen animate-introAnimation relative w-full h-full">
       <Image 
         className="
           object-cover 
