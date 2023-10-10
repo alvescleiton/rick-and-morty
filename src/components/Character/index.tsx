@@ -3,7 +3,7 @@ import Image from 'next/image'
 interface Character {
   name: string
   image: string
-  gender: string
+  species: string
   status: string
 }
 
@@ -25,7 +25,7 @@ export function Character({ character }: Props) {
       </div>
       <div className="text-xs sm:text-sm text-slate-500 p-2">
         <h3 className="text-slate-800">{character?.name}</h3>
-        <span className="block">Gender: {character?.gender}</span>
+        <span className="block">Species: {character?.species}</span>
         <span className="block">Status: {character?.status !== "unknown" ? character?.status : "?"}</span>
       </div>
     </div>
