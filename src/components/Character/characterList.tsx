@@ -1,21 +1,23 @@
 import { Character } from '.'
 import { useQuery, gql } from '@apollo/client'
 
-const GET_CHARACTERS = gql`
-  query {
-    characters {
-      results {
-        id
-        name
-        species
-        status
-        image
-      }
-    }
-  }
-`
+
 
 export function CharacterList() {
+  const GET_CHARACTERS = gql`
+    query {
+      characters(page: 1) {
+        results {
+          id
+          name
+          species
+          status
+          image
+        }
+      }
+    }
+  `
+
   const { error, loading, data } = useQuery(GET_CHARACTERS)
 
   if (loading) {

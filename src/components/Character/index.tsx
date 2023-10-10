@@ -25,7 +25,7 @@ export function Character({ character }: Props) {
       </div>
       <div className="text-xs sm:text-sm text-slate-500 p-2">
         <h3 className="text-slate-800">{character?.name}</h3>
-        <span className="block">Species: {character?.species}</span>
+        <span className="block">Species: {character?.species !== "unknown" ? character?.species : "?"}</span>
         <span className="block">Status: {character?.status !== "unknown" ? character?.status : "?"}</span>
       </div>
     </div>
