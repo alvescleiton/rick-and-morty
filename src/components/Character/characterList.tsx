@@ -1,8 +1,6 @@
 import { Character } from '.'
 import { useQuery, gql } from '@apollo/client'
 
-
-
 export function CharacterList() {
   const GET_CHARACTERS = gql`
     query {
@@ -20,6 +18,8 @@ export function CharacterList() {
 
   const { error, loading, data } = useQuery(GET_CHARACTERS)
 
+  const characters = data?.characters?.results
+
   if (loading) {
     return <div className='flex justify-center items-center h-screen'>Loading...</div>
   }
@@ -28,7 +28,9 @@ export function CharacterList() {
     return <div className='flex justify-center items-center h-screen'>Something went wrong!</div>
   }
 
-  const characters = data?.characters?.results
+  if (characters.length == 0) {
+    return <div className='flex justify-center items-center h-screen'>No items to be shown!</div>
+  }
 
   if (characters.length > 0) {
     return (
@@ -45,7 +47,5 @@ export function CharacterList() {
         </div>
       </div>
     )
-  } else {
-    return <div className='flex justify-center items-center h-screen'>No items to be shown!</div>
   }
 }
